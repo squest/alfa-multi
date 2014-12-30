@@ -1,6 +1,8 @@
-(ns alfa-multi.core)
+(ns alfa-multi.core
+  (:require [alfa-multi.one.main :refer [start-one]]
+            [alfa-multi.two.main :refer [start-two]])
+  (:gen-class))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn -main []
+  (do (start-one 3000)
+      (start-two 3001)))
